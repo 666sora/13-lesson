@@ -2,7 +2,34 @@
 #include <vector>
 
 int main() {
-    
+    std::vector<int> vec;
+    int counter = 0;
+    bool output = false;
+    int n;
+    while (!output) {
+        std::cout << "Input number: ";
+        std::cin >> n;
+        if (n == -1) {
+            output = true;
+        }
+        else if (vec.size() > 19) {
+            if (counter > 19) {
+                counter = 0;
+            }
+            vec[counter] = n;
+            counter++;
+        }
+        else {
+            vec.push_back(n);
+        }
+    }
+    for (int i = 0; i < vec.size(); i++) {
+        if (counter == vec.size()) {
+            counter = 0;
+        }
+        std::cout << vec[counter] << " ";
+        counter++;
+    }
 }
 
 /*
