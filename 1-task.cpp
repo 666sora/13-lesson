@@ -13,15 +13,19 @@ int main() {
     int del;
     std::cout << "Input number to delete: ";
     std::cin >> del;
-    std::vector<int> newVec;
     for (int i = 0; i < vec.size(); i++) {
-        if (vec[i] != del) {
-            newVec.push_back(vec[i]);
+        if (vec[i] == del) {
+            for (int j = i; j < vec.size() - 1; j++) {
+                int temp = vec[j];
+                vec[j] = vec[j + 1];
+                vec[j + 1] = temp;
+            }
+            vec.pop_back();
         }
     }
     std::cout << "New vector: ";
-    for (int i = 0; i < newVec.size(); i++) {
-        std::cout << newVec[i] << " ";
+    for (int i = 0; i < vec.size(); i++) {
+        std::cout << vec[i] << " ";
     }
 }
 
