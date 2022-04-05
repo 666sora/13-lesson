@@ -13,7 +13,7 @@ int main() {
     int del;
     std::cout << "Input number to delete: ";
     std::cin >> del;
-    for (int i = 0; i < vec.size(); i++) {
+    for (int i = vec.size() - 1; i >= 0; i--) {
         if (vec[i] == del) {
             for (int j = i; j < vec.size() - 1; j++) {
                 int temp = vec[j];
